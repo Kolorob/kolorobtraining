@@ -1,11 +1,6 @@
 
-print("Hello")
-
-library(reshape2)
+#library(reshape2)
 library(rjson)
-
-data <- read.table("kolorob-categories-by-area.csv")
-
-melt(data)
-
-toJSON(data)
+data <- read.table("kolorob-categories-by-area.csv", header=TRUE, sep =",")
+json <- toJSON(data)
+write(json, "kolorob-categories-by-area.json")
